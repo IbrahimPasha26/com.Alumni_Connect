@@ -1,0 +1,202 @@
+/* General Styles */
+body {
+    font-family: 'Dosis', sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.bg-img {
+    background-image: url('Images/adminHome.jpeg'); /* Add your background image here */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Adjust to flex-start to ensure content starts from the top */
+    padding: 20px; /* Add padding to ensure content is not too close to the edges */
+    box-sizing: border-box;
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.95); /* Slightly increase opacity for better visibility */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    margin: 20px auto; /* Center content with margin */
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: center; /* Center align the header text */
+    align-items: center;
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 20px;
+    background: #007bff; /* Add background color to header */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header i {
+    color: #fff;
+    margin-right: 10px;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.button-container button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s; /* Add transform for smooth animation */
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for a more distinct look */
+    margin: 0 10px; /* Add margin to space out buttons */
+}
+
+.button-container button.active {
+    background: #0056b3;
+}
+
+.button-container button:hover {
+    background: #0056b3;
+    transform: scale(1.05); /* Scale up button slightly on hover */
+}
+
+.content-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.tab {
+    display: none;
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+}
+
+.tab.active {
+    display: block;
+    opacity: 1; /* Fade in active tab */
+}
+
+form {
+    background: linear-gradient(to bottom right, #e6f2ff, #cce0ff); /* Gradient background for the form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.field label {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.field span {
+    margin-right: 10px;
+}
+
+.field input, .field textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1em;
+    box-sizing: border-box;
+}
+
+.field input[type="submit"] {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.field input[type="submit"]:hover {
+    background: #0056b3;
+}
+
+.alumni-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: flex-start; /* Ensure alignment at the top */
+}
+
+.alumni-card img {
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.alumni-details {
+    flex: 1;
+}
+
+.alumni-details h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.alumni-details p {
+    margin: 5px 0;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.alumni-details p span {
+    margin-right: 10px;
+    color: #007bff;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+

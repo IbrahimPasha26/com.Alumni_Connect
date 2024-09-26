@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f0f2f5;
+}
+
+.bg-img {
+  background: url("Images/alumini_BG.jpg"); /* Updated background image */
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative; /* Added for positioning of overlay */
+}
+
+.bg-img:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  text-align: center;
+  padding: 30px 50px; /* Increased padding */
+  width: 450px; /* Increased width */
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+}
+
+.content header {
+  color: white;
+  font-size: 33px;
+  font-weight: 600;
+  margin: 0 0 35px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content header i {
+  margin-right: 10px;
+}
+
+.field {
+  position: relative;
+  height: 50px; /* Increased height */
+  width: 100%;
+  display: flex;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 5px;
+  margin-bottom: 20px; /* Increased margin */
+}
+
+.field span {
+  color: #222;
+  width: 40px;
+  line-height: 50px; /* Adjusted line-height to match height */
+}
+
+.field input {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #222;
+  font-size: 18px; /* Increased font-size */
+  border-radius: 0 5px 5px 0;
+}
+
+.show {
+  position: absolute;
+  right: 13px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #222;
+  display: none;
+  cursor: pointer;
+}
+
+.pass-key:valid ~ .show {
+  display: block;
+}
+
+.field input[type="submit"] {
+  background: #3498db;
+  border: 1px solid #2691d9;
+  color: white;
+  font-size: 20px; /* Increased font-size */
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.field input[type="submit"]:hover {
+  background: #2691d9;
+}
+
+.login {
+  color: white;
+  margin: 20px 0;
+}
+
+.links {
+  display: flex;
+  cursor: pointer;
+  color: white;
+  margin: 0 0 20px 0;
+}
+
+.facebook,
+.instagram {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.facebook {
+  margin-left: 0;
+  background: #4267b2;
+  border: 1px solid #3e61a8;
+}
+
+.instagram {
+  background: #e1306c;
+  border: 1px solid #df2060;
+}
+
+.facebook:hover {
+  background: #3e61a8;
+}
+
+.instagram:hover {
+  background: #df2060;
+}
+
+.links i {
+  font-size: 17px;
+}
+
+i span {
+  margin-left: 8px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+.signup {
+  font-size: 15px;
+  color: white;
+}
+
+.signup a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.signup a:hover {
+  text-decoration: underline;
+}
+
+.typewriter {
+  margin-bottom: 20px;
+}
+
+.txt-type {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 600;
+}

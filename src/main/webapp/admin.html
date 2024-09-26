@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin login page for Alumni Connect">
+    <meta name="keywords" content="Admin, Login, Alumni Connect">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div nav="nav.html"></div>
+    <script type="text/javascript" src="main.js"></script>
+
+    <div class="bg-img">
+        <div class="content">
+            <header><i class="fas fa-user-shield"></i> Admin Login</header>
+            <div class="typewriter">
+                <span class="txt-type" data-wait="3000" data-words='["Welcome Admin!", "Manage Alumni Connect!", "Access the Admin Panel!"]'></span>
+            </div>
+            <form action="admin_log" method="POST">
+                <div class="field">
+                    <label for="adminEmail" class="sr-only">Email</label>
+                    <span class="fa fa-envelope"></span>
+                    <input type="email" id="adminEmail" name="adminEmail" required placeholder="Email">
+                </div>
+                <div class="field space">
+                    <label for="adminPassword" class="sr-only">Password</label>
+                    <span class="fa fa-lock"></span>
+                    <input type="password" id="adminPassword" class="pass-key" name="adminPassword" required placeholder="Password">
+                    <span class="show" onclick="togglePasswordVisibility()">SHOW</span>
+                </div>
+                <br><br>
+                <div class="field">
+                    <input type="submit" value="LOGIN">
+                </div>
+                <div class="signup">
+                    <p>Not an admin ? <a href="login.html">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        class TypeWriter {
+            constructor(txtElement, words, wait = 3000) {
+                this.txtElement = txtElement;
+                this.words = words;
+                this.txt = '';
+                this.wordIndex = 0;
+                this.wait = parseInt(wait, 10);
+                this.type();
+                this.isDeleting = false;
+            }
+
+            type() {
+                const current = this.wordIndex % this.words.length;
+                const fullTxt = this.words[current];
+
+                if (this.isDeleting) {
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+
+                this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+                let typeSpeed = 300;
+
+                if (this.isDeleting) {
+                    typeSpeed /= 2;
+                }
+
+                if (!this.isDeleting && this.txt === fullTxt) {
+                    typeSpeed = this.wait;
+                    this.isDeleting = true;
+                } else if (this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    this.wordIndex++;
+                    typeSpeed = 500;
+                }
+
+                setTimeout(() => this.type(), typeSpeed);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+
+        function init() {
+            const txtElement = document.querySelector('.txt-type');
+            const words = JSON.parse(txtElement.getAttribute('data-words'));
+            const wait = txtElement.getAttribute('data-wait');
+            new TypeWriter(txtElement, words, wait);
+        }
+
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById('adminPassword');
+            const showSpan = document.querySelector('.show');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                showSpan.textContent = 'HIDE';
+            } else {
+                passwordField.type = 'password';
+                showSpan.textContent = 'SHOW';
+            }
+        }
+    </script>
+</body>
+</html>

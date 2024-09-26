@@ -1,0 +1,475 @@
+/* General Styles */
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #fafafa; /* Light Gray */
+    color: #6c757d; /* Muted Gray */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent White */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
+    position: auto;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+.menu-items {
+    display: flex;
+    list-style: none;
+}
+
+.menu-items li {
+    margin: 0 1.5rem;
+}
+
+.menu-items a {
+    text-decoration: none;
+    color: #007bff; /* Blue */
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.menu-items a:hover {
+    color: #0056b3; /* Darker Blue */
+}
+
+/* Main Title */
+.main-title {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #007bff; /* Blue */
+}
+
+.showcase-area p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: #6c757d; /* Muted Gray */
+}
+
+/* About Section */
+#about {
+    padding: 4rem 0;
+    background-color: #f0f2f5; /* Light Gray */
+}
+
+.about-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1;
+    padding: 1rem;
+    text-align: justify;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #007bff; /* Blue */
+}
+
+/* About Section Image Styling */
+.about-img img {
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Events Section */
+#events {
+    padding: 4rem 0;
+    background-color: #007bff; /* Blue */
+}
+
+#events h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #ffffff; /* White */
+}
+
+.event-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.event-cards .card {
+    background-color: #f8f9fa; /* Light Gray */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    flex: 1 1 30%;
+    transition: transform 0.3s ease;
+}
+
+.event-cards .card:hover {
+    transform: translateY(-10px);
+}
+
+.event-cards .card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #0056b3; /* Darker Blue */
+}
+
+.event-cards .card p {
+    font-size: 1.2rem;
+    color: #6c757d; /* Muted Gray */
+}
+
+.event-cards .btn {
+    background-color: #0056b3; /* Darker Blue */
+    color: #ffffff; /* White */
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.event-cards .btn:hover {
+    background-color: #007bff; /* Blue */
+}
+
+/* Alumni Section */
+#alumni {
+    padding: 4rem 0;
+    background-color: #f8f9fa; /* Light Gray */
+}
+
+#alumni h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #6c757d; /* Muted Gray */
+}
+
+.alumni-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.alumni-cards .card {
+    background-color: #ffffff; /* White */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    flex: 1 1 300px;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.alumni-cards .card:hover {
+    transform: translateY(-10px);
+}
+
+.alumni-cards .card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    border: 2px solid #0056b3; /* Darker Blue */
+}
+
+.alumni-cards .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #6c757d; /* Muted Gray */
+}
+
+.alumni-cards .card p {
+    font-size: 1rem;
+    color: #007bff; /* Blue */
+    margin: 0.5rem 0;
+}
+
+/* Contact Section */
+#contact {
+    padding: 4rem 0;
+    background-color: #007bff; /* Blue */
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-container {
+    flex: 1;
+    padding: 1rem;
+}
+
+.form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #ffffff; /* White */
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #6c757d; /* Muted Gray */
+    border-radius: 5px;
+}
+
+.form-container textarea {
+    resize: vertical;
+}
+
+.form-container .btn {
+    background-color: #0056b3; /* Darker Blue */
+    color: #ffffff; /* White */
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-container .btn:hover {
+    background-color: #007bff; /* Blue */
+}
+
+.contact-img img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+#footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #2c3e50; /* Dark Gray */
+    color: #f0f2f5; /* Light Gray */
+    font-size: 1rem;
+}
+
+/* Event Slider Styles */
+.event-slider {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.swiper-container {
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+.swiper-wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+.swiper-slide {
+    background-color: #f8f9fa; /* Light Gray */
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.swiper-slide:hover {
+    transform: translateY(-10px);
+}
+
+.event-img-container {
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.event-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.swiper-slide:hover .event-img {
+    transform: scale(1.05);
+}
+
+.event-details {
+    padding: 1rem;
+    color: #6c757d; /* Muted Gray */
+}
+.event-details h3 {
+    font-size: 1.5rem;
+    color: #0056b3; /* Darker Blue */
+    margin-bottom: 1rem;
+}
+
+.event-details p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.swiper-pagination-bullet {
+    background: #007bff; /* Blue */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #007bff; /* Blue */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: #0056b3; /* Darker Blue */
+}
+
+
+/* Increase navbar menu items size */
+.menu-items li a {
+    font-size: 1.2rem; /* Adjust size as needed */
+    font-weight: bold; /* Make text bold */
+    color: #333; /* Adjust color as needed */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.menu-items li a:hover {
+    color: #007bff; /* Change color on hover */
+}
+/* Floating Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 1); /* Solid background when scrolled */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.menu-items {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.menu-items li {
+    position: relative;
+}
+
+.menu-items a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.menu-items a:hover {
+    color: #007BFF; /* Hover color */
+}
+
+.logo img {
+    max-height: 50px;
+    transition: max-height 0.3s ease;
+}
+
+.navbar.scrolled .logo img {
+    max-height: 40px; /* Shrink logo on scroll */
+}
+
+/* Hamburger menu styles */
+.hamburger-lines {
+    display: none; /* Hide by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Add hover effect for hamburger menu */
+.hamburger-lines:hover .line {
+    background-color: #007BFF;
+}
+
+/* Navbar Transition when scrolled */
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Navbar Logo Image */
+.logo img {
+    max-width: 200px; /* Increase the maximum width */
+    height: auto; /* Maintain aspect ratio */
+    transition: max-height 0.3s ease, max-width 0.3s ease;
+}
+
+/* Shrink logo on scroll */
+.navbar.scrolled .logo img {
+    max-width: 150px; /* Adjust this value if needed for scrolling */
+    max-height: 40px; /* Adjust this value if needed for scrolling */
+}
+
+
+

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alumni Sign Up Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign up page for Alumni Connect">
+    <meta name="keywords" content="Alumni, Sign Up, Connect">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <div class="bg-img">
+        <div class="content">
+            <header><i class="fas fa-user-graduate"></i> Alumni Connect</header>
+            <div class="typewriter">
+                <span class="txt-type" data-wait="3000" data-words='["Join Alumni Connect!", "Reconnect with your peers!", "Stay updated!"]'></span>
+            </div>
+            <form id="signupForm" action="register" method="POST" onsubmit="return validatePasswords()">
+                <div id="errorMsg" style="color:red; display:none;"></div>
+                <div class="field">
+                    <label for="username" class="sr-only">Username</label>
+                    <span class="fa fa-user"></span>
+                    <input type="text" id="username" name="username" required placeholder="Username">
+                </div>
+                <div class="field space">
+                    <label for="password" class="sr-only">Password</label>
+                    <span class="fa fa-lock"></span>
+                    <input type="password" id="password" class="pass-key" name="password" required placeholder="Password">
+                    <span class="show" onclick="togglePasswordVisibility()">SHOW</span>
+                </div>
+                <div class="field space">
+                    <label for="confirmPassword" class="sr-only">Confirm Password</label>
+                    <span class="fa fa-lock"></span>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm Password">
+                </div>
+                <div id="passwordError" style="color:red; display:none;">Passwords do not match!</div>
+                <div class="field space">
+                    <label for="email" class="sr-only">Email</label>
+                    <span class="fa fa-envelope"></span>
+                    <input type="email" id="email" name="email" required placeholder="Email">
+                </div>
+                <div class="field space">
+                    <label for="fullName" class="sr-only">Full Name</label>
+                    <span class="fa fa-user"></span>
+                    <input type="text" id="fullName" name="fullName" placeholder="Full Name">
+                </div>
+                <div class="field space">
+                    <label for="address" class="sr-only">Address</label>
+                    <span class="fa fa-home"></span>
+                    <input type="text" id="address" name="address" placeholder="Address">
+                </div>
+                <br><br>
+                <div class="field">
+                    <input type="submit" value="SIGN UP">
+                </div>
+                <div class="signup">
+                    <p>Already have an account? <a href="login.html">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        class TypeWriter {
+            constructor(txtElement, words, wait = 3000) {
+                this.txtElement = txtElement;
+                this.words = words;
+                this.txt = '';
+                this.wordIndex = 0;
+                this.wait = parseInt(wait, 10);
+                this.type();
+                this.isDeleting = false;
+            }
+
+            type() {
+                const current = this.wordIndex % this.words.length;
+                const fullTxt = this.words[current];
+
+                if (this.isDeleting) {
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+
+                this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+                let typeSpeed = 300;
+
+                if (this.isDeleting) {
+                    typeSpeed /= 2;
+                }
+
+                if (!this.isDeleting && this.txt === fullTxt) {
+                    typeSpeed = this.wait;
+                    this.isDeleting = true;
+                } else if (this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    this.wordIndex++;
+                    typeSpeed = 500;
+                }
+
+                setTimeout(() => this.type(), typeSpeed);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+
+        function init() {
+            const txtElement = document.querySelector('.txt-type');
+            const words = JSON.parse(txtElement.getAttribute('data-words'));
+            const wait = txtElement.getAttribute('data-wait');
+            new TypeWriter(txtElement, words, wait);
+            
+            // Check if there's an error or success message in the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const errorMsg = urlParams.get('error');
+            const successMsg = urlParams.get('message');
+            
+            if (errorMsg) {
+                document.getElementById('errorMsg').style.display = 'block';
+                document.getElementById('errorMsg').innerText = errorMsg.replace(/\+/g, ' ');
+            }
+            if (successMsg) {
+                document.getElementById('errorMsg').style.display = 'block';
+                document.getElementById('errorMsg').style.color = 'green';
+                document.getElementById('errorMsg').innerText = successMsg.replace(/\+/g, ' ');
+            }
+        }
+
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById('password');
+            const confirmPasswordField = document.getElementById('confirmPassword');
+            const showButton = document.querySelector('.show');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                confirmPasswordField.type = 'text';
+                showButton.innerText = 'HIDE';
+            } else {
+                passwordField.type = 'password';
+                confirmPasswordField.type = 'password';
+                showButton.innerText = 'SHOW';
+            }
+        }
+
+        function validatePasswords() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const passwordError = document.getElementById('passwordError');
+
+            if (password !== confirmPassword) {
+                passwordError.style.display = 'block';
+                return false;
+            } else {
+                passwordError.style.display = 'none';
+                return true;
+            }
+        }
+    </script> <!-- Link to external JS file -->
+</body>
+</html>
