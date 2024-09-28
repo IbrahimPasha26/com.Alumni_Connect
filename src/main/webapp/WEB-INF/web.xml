@@ -23,12 +23,12 @@
             <file-size-threshold>5242880</file-size-threshold> <!-- 5MB -->
         </multipart-config>
     </servlet>
-    <servlet-mapping>
+    <!--<servlet-mapping>
         <servlet-name>AddAlumniServlet</servlet-name>
         <url-pattern>/addAlumni</url-pattern>
     </servlet-mapping>
 
-    <!-- AlumniSummaryServlet Configuration -->
+     AlumniSummaryServlet Configuration -->
     <servlet>
         <servlet-name>AlumniSummaryServlet</servlet-name>
         <servlet-class>com.Alumni_Connect.User.AlumniSummaryServlet</servlet-class>
