@@ -26,7 +26,6 @@ import com.Alumni_Connect.dbHandler.DataInjector;
 	    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	        HttpSession session = req.getSession();
 	        try {
-	        	System.out.println("hello");
 	            String name = req.getParameter("name");
 	            String email = req.getParameter("email");
 	            String phno = req.getParameter("phone_number");
@@ -36,8 +35,6 @@ import com.Alumni_Connect.dbHandler.DataInjector;
 	            String curCompany = req.getParameter("current_company");
 	            String location = req.getParameter("location");
 	            String bio = req.getParameter("bio");
-	            System.out.println(name);
-	            System.out.println(bio);
 	            // Handling the upload file
 	            Part filePart = req.getPart("profile_picture");
 	            if (filePart != null && filePart.getSize() > 0) {

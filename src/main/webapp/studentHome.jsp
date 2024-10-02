@@ -88,14 +88,13 @@
             }
         }
     }
-
     List<Alumni> alumniList = null;
     List<Event> eventList = null;
     try {
         alumniList = DataFetcher.fetchAlumniInfo(email);
         if (alumniList != null && !alumniList.isEmpty()) {
-            int alumniId = alumniList.get(0).getAlumniId(); // Get alumniId directly as int
-            eventList = DataFetcher.fetchEventsForAlumni(alumniId); // Fetching events for the logged-in alumni
+            int alumniId = alumniList.get(0).getAlumniId(); 
+            eventList = DataFetcher.fetchEventsForAlumni(alumniId); 
         }
     } catch (Exception e) {
         e.printStackTrace();
@@ -105,7 +104,7 @@
 
     <div class="container">
         <div class="header">
-            <h1>Student Panel</h1>
+            <h1>Alumni Panel</h1>
         </div>
         <div class="row">
             <div class="profile-nav col-md-3">
@@ -175,7 +174,7 @@
                             <!-- Form fields -->
                             <div class="form-group field">
                                 <label for="firstName"><i class="fa fa-user"></i> First Name:</label>
-                                <input type="text" id="firstName" name="firstName" class="form-control" value="" required="required">
+                                <input type="text" id="firstName" name="firstName" class="form-control" value="<%= (alumniList != null && !alumniList.isEmpty()) ? alumniList.get(0).getName() : "N/A" %>" required="required">
                             </div>
                             <div class="form-group field">
                                 <label for="lastName"><i class="fa fa-user"></i> Last Name:</label>
@@ -183,11 +182,11 @@
                             </div>
                             <div class="form-group field">
                                 <label for="email"><i class="fa fa-envelope"></i> Email:</label>
-                                <input type="email" id="email" name="email" class="form-control" value="">
+                                <input type="email" id="email" name="email" class="form-control" value="<%= (alumniList != null && !alumniList.isEmpty()) ? alumniList.get(0).getEmail() : "N/A" %>">
                             </div>
                             <div class="form-group field">
                                 <label for="phoneNumber"><i class="fa fa-phone"></i> Phone Number:</label>
-                                <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" value="" required="required">
+                                <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" value="<%= (alumniList != null && !alumniList.isEmpty()) ? alumniList.get(0).getPhoneNumber() : "N/A" %>" required="required">
                             </div>
                             <div class="form-group field">
                                 <label for="enrollmentYear"><i class="fa fa-calendar"></i> Enrollment Year:</label>
@@ -195,15 +194,15 @@
                             </div>
                             <div class="form-group field">
                                 <label for="course"><i class="fa fa-book"></i> Course:</label>
-                                <input type="text" id="course" name="course" class="form-control" value="" required="required">
+                                <input type="text" id="course" name="course" class="form-control" value="<%= (alumniList != null && !alumniList.isEmpty()) ? alumniList.get(0).getCourse() : "N/A" %>" required="required">
                             </div>
                             <div class="form-group field">
                                 <label for="currentStatus"><i class="fa fa-info-circle"></i> Current Status:</label>
-                                <input type="text" id="currentStatus" name="currentStatus" class="form-control" value="" required="required">
+                                <input type="text" id="currentStatus" name="currentStatus" class="form-control" value="<%= (alumniList != null && !alumniList.isEmpty()) ? alumniList.get(0).getCurrentJobTitle() : "N/A" %>" required="required">
                             </div>
                             <div class="form-group field">
                                 <label for="graduationYear"><i class="fa fa-calendar"></i> Graduation Year:</label>
-                                <input type="number" id="graduationYear" name="graduationYear" class="form-control" value="" required="required">
+                                <input type="number" id="graduationYear" name="graduationYear" class="form-control" value="<%= (alumniList != null && !alumniList.isEmpty()) ? alumniList.get(0).getYearOfGraduation() : "N/A" %>" required="required">
                             </div>
                             <div class="form-group field">
                                 <label for="profilePicture"><i class="fa fa-image"></i> Profile Picture:</label>
